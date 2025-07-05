@@ -63,7 +63,7 @@ class SimulatedRobotState:
         self.observer = observer
 
 
-class InteractivePointFilterDemo:
+class InteractiveFastPlateOrbitFilterDemo:
     window_title: str
     h: int
     w: int
@@ -221,6 +221,6 @@ if __name__ == "__main__":
         0.11, 2.0, 0.001, 0.005, 0.0001, 6.0, 1.5, 3.0, np.array([6.0, 6.0]), np.array([10.0, 10.0]))
     simulated_robot_state = SimulatedRobotState(
         radius=0.1, angle=0.0, angular_velocity=0.0, center=np.zeros(3), observer=np.zeros(3))
-    demo = InteractivePointFilterDemo(window_title="demo", resolution=(
+    demo = InteractiveFastPlateOrbitFilterDemo(window_title="demo", resolution=(
         1024, 1024), simulated_robot_state=simulated_robot_state, number_of_particles=(4 << 20), config=config)
     demo.render_loop()
