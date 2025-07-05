@@ -1,0 +1,8 @@
+.vscode
+__pycache__/
+build/
+_skbuild/
+dist/
+
+robomaster_particle_filters.egg-info
+src/robomaster_particle_filters.egg-info
