@@ -115,10 +115,10 @@ class InteractiveFastPlateOrbitFilterDemo:
         observation = self._get_observation()
         self.filter = fast_plate_orbit.ParticleFilter(
             self.number_of_particles, observation, self.particle_filter_configuration)
-        self.latest_update_time = time.time()
+        self.latest_update_time = time.monotonic()
 
     def update_filter(self) -> fast_plate_orbit.Prediction:
-        current_time = time.time()
+        current_time = time.monotonic()
         elapsed = current_time - self.latest_update_time
         self.simulated_robot_state.update(elapsed)
         observation = self._get_observation()
