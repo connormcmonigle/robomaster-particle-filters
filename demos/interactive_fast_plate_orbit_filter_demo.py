@@ -203,7 +203,7 @@ class InteractiveFastPlateOrbitFilterDemo:
 
             cv2.imshow(self.window_title, self.input_image)
 
-            key = cv2.waitKey(16)
+            key = cv2.waitKey(1)
             if key == SPACE_KEY:
                 self.input_image = np.zeros((self.h, self.w, 3), np.uint8)
 
