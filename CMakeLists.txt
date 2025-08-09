@@ -43,7 +43,7 @@ target_compile_definitions (robomaster_particle_filters PRIVATE $<$<COMPILE_LANG
 target_compile_definitions (robomaster_particle_filters PRIVATE $<$<COMPILE_LANGUAGE:CUDA>: THRUST_HOST_SYSTEM=THRUST_HOST_SYSTEM_CPP>)
 target_compile_definitions (robomaster_particle_filters PRIVATE $<$<COMPILE_LANGUAGE:CUDA>: THRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA>)
 
-set_target_properties (robomaster_particle_filters PROPERTIES CUDA_ARCHITECTURES all-major)
+set_target_properties (robomaster_particle_filters PROPERTIES CUDA_ARCHITECTURES native)
 target_compile_options (robomaster_particle_filters PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:
                        --expt-relaxed-constexpr
                        --extended-lambda
