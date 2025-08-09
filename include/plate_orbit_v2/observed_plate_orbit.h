@@ -10,4 +10,4 @@ struct observed_plate_orbit {
   Eigen::Vector3f center;
 };
 
-}
+}  // namespace plate_orbit_v2

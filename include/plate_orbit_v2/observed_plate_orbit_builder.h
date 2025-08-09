@@ -48,4 +48,4 @@ class observed_plate_orbit_builder {
       : radius_prior_{radius_prior}, observer_position_{observer_position} {}
 };
 
-}  // namespace plate_orbit
+}  // namespace plate_orbit_v2

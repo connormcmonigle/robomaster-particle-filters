@@ -2,9 +2,9 @@
 
 #include <pf/config/target_config.h>
 #include <plate_orbit/observed_plate.h>
-#include <thrust/optional.h>
 
 #include <Eigen/Dense>
+#include <cuda/std/optional>
 
 namespace plate_orbit {
 
@@ -12,15 +12,15 @@ class observation {
  private:
   Eigen::Vector3f observer_position_;
   observed_plate plate_one_;
-  thrust::optional<observed_plate> plate_two_;
+  cuda::std::optional<observed_plate> plate_two_;
 
  public:
   PF_TARGET_ATTRS [[nodiscard]] const Eigen::Vector3f& observer_position() const noexcept { return observer_position_; }
   PF_TARGET_ATTRS [[nodiscard]] const observed_plate& plate_one() const noexcept { return plate_one_; }
-  PF_TARGET_ATTRS [[nodiscard]] const thrust::optional<observed_plate>& plate_two() const noexcept { return plate_two_; }
+  PF_TARGET_ATTRS [[nodiscard]] const cuda::std::optional<observed_plate>& plate_two() const noexcept { return plate_two_; }
 
   PF_TARGET_ATTRS observation(const Eigen::Vector3f& observer_position, const observed_plate& plate_one) noexcept
-      : observer_position_{observer_position}, plate_one_{plate_one}, plate_two_{thrust::nullopt} {}
+      : observer_position_{observer_position}, plate_one_{plate_one}, plate_two_{cuda::std::nullopt} {}
 
   PF_TARGET_ATTRS
   observation(const Eigen::Vector3f& observer_position, const observed_plate& plate_one, const observed_plate& plate_two) noexcept

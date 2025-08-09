@@ -29,4 +29,4 @@ class particle_filter {
       const particle_filter_configuration_parameters& params) noexcept;
 };
 
-}  // namespace plate_orbit
+}  // namespace plate_orbit_v2

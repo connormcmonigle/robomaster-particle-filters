@@ -195,7 +195,6 @@ class particle_filter_configuration {
 
   PF_TARGET_ONLY_ATTRS void apply_process(const float& time_offset_seconds, util::default_rv_sampler& sampler, prediction& state)
       const noexcept {
-
     const float radius_noise_common = sampler.normal_sample(params_.radius_common_process_variance);
     const float radius_noise_0 = sampler.normal_sample(params_.radius_offset_process_variance);
     const float radius_noise_1 = sampler.normal_sample(params_.radius_offset_process_variance);
